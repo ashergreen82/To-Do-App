@@ -1,0 +1,74 @@
+body {
+    background-color: gold;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: black;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 40px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+form {
+    text-align: center;
+}
+
+p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: black;
+}
+
+#paper_image {
+    width: 100px;
+    height: 100px;
+}
+
+#rock {
+    width: 100px;
+    height: 100px;
+}
+
+#current_score {
+    margin-top: 0px;
+}
+
+#scissors_image {
+    width: 100px;
+    height: 100px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+div {
+    background-color: aqua;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: Black;
+}
