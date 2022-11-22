@@ -1,50 +1,60 @@
-const submit_button = document.getElementById("test_button");
+const submit_button = document.getElementById("submit_button");
 submit_button.addEventListener("click", user_entered_something);
 
 function user_entered_something(e) {
     e.preventDefault();
-    let user_input = document.getElementById("To_do_item").value;
+    const toDoInput = document.getElementById("To_do_item");
+    const userInput = toDoInput.value;
 
     // Step is create a div which will be the outer container
     const container = document.createElement("div");
-    document.getElementById("checkbox_location").appendChild(container);
+    container.setAttribute("class", "to_do_item");
+    document.getElementById("todo_item_container").appendChild(container);
+
+    // This step is to create a delete button
+    const delBtn = document.createElement("button");
+    delBtn.innerText = "x";
+    delBtn.style.display = "none";
+    container.appendChild(delBtn);
+    delBtn.addEventListener("click", removeTodoItemfromList)
 
     // This step is to create a label
     const label_1 = document.createElement("label");
-    label_1.innerText = user_input;
-    label_1.setAttribute("for", user_input);
+    label_1.innerText = userInput;
+    label_1.setAttribute("for", userInput);
     // label_1.setAttribute("style", "text-decoration: line-through");
     container.appendChild(label_1);
 
     // This step is to create the checkbox
-    const check_box = document.createElement("input");
-    check_box.setAttribute("name", user_input);
-    check_box.setAttribute("id", user_input);
-    check_box.setAttribute("type", "checkbox");
-    container.appendChild(check_box);
+    const checkBox = document.createElement("input");
+    checkBox.setAttribute("name", userInput);
+    checkBox.setAttribute("id", userInput);
+    checkBox.setAttribute("type", "checkbox");
+    container.appendChild(checkBox);
 
     // My event listener
-    check_box.addEventListener("change", user_checked_box);
+    checkBox.addEventListener("change", user_checked_box);
     // When the box is checked
     function user_checked_box(e) {
-        is_box_checked = e.target.checked;
-        // check_box2.setAttribute("name", user_input);
-        const check_box2 = document.createElement("input");
-        if (is_box_checked == true) {
+        isBoxChecked = e.target.checked;
+        const deleteButton = e.target.previousSibling.previousSibling;
+        // checkBox2.setAttribute("name", userInput);
+        if (isBoxChecked == true) {
             console.log('Checkbox is checked');
             label_1.setAttribute("style", "text-decoration: line-through");
-            check_box2.setAttribute("name", user_input);
-            check_box2.setAttribute("id", user_input);
-            check_box2.setAttribute("type", "checkbox");
-            // check_box2.setAttribute("checked");
-            container.appendChild(check_box2);
+            deleteButton.style.display = null;
         } else {
             console.log("Checkbox is not checked");
             label_1.setAttribute("style", "text-decoration: none");
-            check_box2.remove();
+            deleteButton.style.display = "none";
         }
     }
 
-    user_input.value = "";
+    function removeTodoItemfromList() {
+        checkBox.remove();
+        label_1.remove();
+        delBtn.remove();
+    }
 
+    toDoInput.value = "";
 }
