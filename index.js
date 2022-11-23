@@ -15,14 +15,16 @@ function user_entered_something(e) {
     const delBtn = document.createElement("button");
     delBtn.innerText = "x";
     delBtn.style.display = "none";
+    delBtn.style.backgroundColor = "orange";
+    delBtn.style.fontSize = "8px";
+    delBtn.style.borderRadius = "8px";
     container.appendChild(delBtn);
-    delBtn.addEventListener("click", removeTodoItemfromList)
+    delBtn.addEventListener("click", removeTodoItemfromList);
 
     // This step is to create a label
     const label_1 = document.createElement("label");
     label_1.innerText = userInput;
     label_1.setAttribute("for", userInput);
-    // label_1.setAttribute("style", "text-decoration: line-through");
     container.appendChild(label_1);
 
     // This step is to create the checkbox
@@ -30,21 +32,30 @@ function user_entered_something(e) {
     checkBox.setAttribute("name", userInput);
     checkBox.setAttribute("id", userInput);
     checkBox.setAttribute("type", "checkbox");
+    // checkBox.setAttribute("minlength='4'")
     container.appendChild(checkBox);
+
+    // const delBtn = document.createElement("button");
+    // delBtn.innerText = "x";
+    // delBtn.style.display = "none";
+    // delBtn.style.backgroundColor = "orange";
+    // delBtn.style.fontSize = "8px";
+    // delBtn.style.borderRadius = "8px";
+    // container.appendChild(delBtn);
+    // delBtn.addEventListener("click", removeTodoItemfromList);
 
     // My event listener
     checkBox.addEventListener("change", user_checked_box);
+
     // When the box is checked
     function user_checked_box(e) {
         isBoxChecked = e.target.checked;
         const deleteButton = e.target.previousSibling.previousSibling;
         // checkBox2.setAttribute("name", userInput);
         if (isBoxChecked == true) {
-            console.log('Checkbox is checked');
             label_1.setAttribute("style", "text-decoration: line-through");
             deleteButton.style.display = null;
         } else {
-            console.log("Checkbox is not checked");
             label_1.setAttribute("style", "text-decoration: none");
             deleteButton.style.display = "none";
         }
@@ -54,6 +65,7 @@ function user_entered_something(e) {
         checkBox.remove();
         label_1.remove();
         delBtn.remove();
+        container.remove();
     }
 
     toDoInput.value = "";

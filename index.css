@@ -40,25 +40,6 @@ p {
     color: black;
 }
 
-#paper_image {
-    width: 100px;
-    height: 100px;
-}
-
-#rock {
-    width: 100px;
-    height: 100px;
-}
-
-#current_score {
-    margin-top: 0px;
-}
-
-#scissors_image {
-    width: 100px;
-    height: 100px;
-}
-
 img {
     width: 100px;
     height: 100px;
