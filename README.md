@@ -10,7 +10,8 @@ You can run the program from [here](https://ashergreen82.github.io/To-Do-App/).
 ## **Summary**
 
 <pre>
-This Todo app has given me the practice in working with creating elements on the fly with Javascript.  I also learned how to remove elements on the fly as well.
+This Todo app has given me the practice in working with creating elements on the fly with Javascript.
+I also learned how to remove elements on the fly as well.
 Some more things I learned how to do:
     1) I leanred how to blank out the field after the user clicks the submit button.
     2) I learned how to move the checkbox from the right side to the left side.
